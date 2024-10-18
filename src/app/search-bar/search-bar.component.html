@@ -1,0 +1,10 @@
+<div class="container">
+    <label for="brand">Brand</label>
+    <input (input)="searchAutoList(make.value)" type="text" id="brand" #make placeholder="Sample:BMW"/>
+    <button (click)="searchAutoList(make.value)">Search</button>
+</div>
+
+    <div *ngFor="let auto of selectedAutos">
+        {{auto.model}}
+    </div>
+
