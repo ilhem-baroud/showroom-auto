@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Auto } from '../auto';
 import { CommonModule } from '@angular/common';
 
@@ -11,6 +11,8 @@ import { CommonModule } from '@angular/common';
 })
 export class SearchBarComponent {
 
+  @Output() autoEvent=new EventEmitter<Auto>();
+
   @Input() autos :Auto[]=[]
   selectedAutos:Auto[]=[]
 searchAutoList(searchString:string){
@@ -19,4 +21,11 @@ searchAutoList(searchString:string){
     auto=>auto.brand.toUpperCase().includes(searchString.toUpperCase())
   )
 }
+
+getAutoDetails(auto:Auto){
+  this.selectedAutos=[]
+  this.autoEvent.emit(auto);
+}
+
+
 }

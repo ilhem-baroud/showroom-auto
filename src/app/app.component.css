@@ -1,0 +1,19 @@
+.label{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(2, 134, 90);
+    display: block;
+    width: 200px;
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.detail{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    display: block;
+    border-bottom: 2px solid rgb(2, 134, 90);
+}

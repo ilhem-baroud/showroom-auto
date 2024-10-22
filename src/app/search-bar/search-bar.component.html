@@ -4,7 +4,19 @@
     <button (click)="searchAutoList(make.value)">Search</button>
 </div>
 
-    <div *ngFor="let auto of selectedAutos">
-        {{auto.model}}
+<div class="auto-list">
+    <div class="auto-card" *ngFor="let auto of selectedAutos">
+        <div (click)="getAutoDetails(auto)">
+            <img src="photos/{{auto.photo}}" title="Clic for more details!"/>
+            <div class="price">{{auto.price}}</div>
+            <p [ngStyle]="{'line-height':'20px'}">
+                <span class="model">{{auto.model}}</span>
+                <span [ngStyle]="{'color':'rgba(205, 103, 2, 0.956)','font-weight':'bold'}">{{auto.brand|uppercase}}</span><br />
+                {{auto.price}}.000 DNT<br />
+                {{auto.availability}} units in-stock. 
+            </p>
+        </div>
     </div>
+</div>
+
 

@@ -1,2 +1,17 @@
 <app-head-bar></app-head-bar>
-<app-search-bar [autos]="autoList"></app-search-bar>
+<app-search-bar [autos]="autoList" (autoEvent)="getAuto($event)"></app-search-bar>
+<div *ngIf="selectedAuto"  class="container">
+    <div class="car-details">
+        <p class="label">Brand</p>
+        <p class="detail">{{selectedAuto.brand}}</p>
+        <p class="label">Model</p>
+        <p class="detail">{{selectedAuto.model}}</p>
+        <p class="label">Power</p>
+        <p class="detail">{{selectedAuto.power}}</p>
+        <p class="label">Model</p>
+        <p class="detail">{{selectedAuto.model}}</p>
+    </div>
+    <div class="image">
+        <img src="photos/{{selectedAuto.photo}}" alt="" />
+    </div>
+</div>
